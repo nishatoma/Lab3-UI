@@ -29,7 +29,6 @@ public class PrimitiveController : MonoBehaviour
             rb = primitive.GetComponent<Rigidbody>();
             primitives.Add(rb);
         } else if (Input.GetKeyDown(KeyCode.G)) {
-            isGLetterPressed = !isGLetterPressed;
             toggleGravity();
         } else if (Input.GetKeyDown(KeyCode.F)) {
             applyImpulseForce();
@@ -49,7 +48,8 @@ public class PrimitiveController : MonoBehaviour
         
     }
 
-    void toggleGravity() {
+    public void toggleGravity() {
+        isGLetterPressed = !isGLetterPressed;
         foreach(Rigidbody rb in primitives) {
             if (isGLetterPressed) {
                 rb.useGravity = true;
@@ -70,7 +70,7 @@ public class PrimitiveController : MonoBehaviour
         return pos;
     }
 
-    void applyImpulseForce() {
+    public void applyImpulseForce() {
         float x;
         float y;
         float z;
@@ -87,5 +87,11 @@ public class PrimitiveController : MonoBehaviour
             // Add force.
             rb.AddForce(force, ForceMode.Impulse);
         }
+    }
+    
+    public void generateObject() {
+        primitive = Instantiate(primitive, getPosition(), Quaternion.identity);
+        rb = primitive.GetComponent<Rigidbody>();
+        primitives.Add(rb);
     }
 }
