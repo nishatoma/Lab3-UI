@@ -1,0 +1,15 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\league95\\Documents\\GitHub\\Lab3-UI\\Lab3-UI\\Assets\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "Assets [Testing]"
+        }
+      }
+    }
+  ]
+}
