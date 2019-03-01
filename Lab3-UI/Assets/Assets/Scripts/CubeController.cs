@@ -8,11 +8,13 @@ public class CubeController : MonoBehaviour
 
     public GameObject panel;
     public Slider slider;
+    public Canvas canvas;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        // canvas = GameObject.FindGameObjectWithTag("localCanvas").GetComponent<Canvas>();
+        // canvas.enabled = !canvas.enabled;
     }
 
     // Update is called once per frame
@@ -24,13 +26,12 @@ public class CubeController : MonoBehaviour
     }
 
     void FixedUpdate() {
-        Vector3 panelPos = Camera.main.WorldToScreenPoint(this.transform.position);
-        panelPos.y = panelPos.y + 150;
-        panel.transform.position = panelPos;
+        // Vector3 panelPos = Camera.main.WorldToScreenPoint(this.transform.position);
+        // panelPos.y = panelPos.y + 150;
+        // panel.transform.position = panelPos;
     }
 
     void togglePanel() {
-        Canvas canvas = GameObject.FindGameObjectWithTag("localCanvas").GetComponent<Canvas>();
         canvas.enabled = !canvas.enabled;
     }
 

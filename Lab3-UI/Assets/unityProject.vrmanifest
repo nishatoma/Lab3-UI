@@ -2,6 +2,7 @@
   "source": "Unity",
   "applications": [
     {
+      "app_key": "application.generated.unity.lab1physics.exe",
       "launch_type": "url",
       "url": "steam://launch/",
       "action_manifest_path": "C:\\Users\\league95\\Documents\\GitHub\\Lab3-UI\\Lab3-UI\\Assets\\actions.json",
