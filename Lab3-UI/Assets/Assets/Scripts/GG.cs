@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CubeController : MonoBehaviour
+public class GG : MonoBehaviour
 {
 
     public GameObject panel;
@@ -14,16 +14,13 @@ public class CubeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // canvas = GameObject.FindGameObjectWithTag("localCanvas").GetComponent<Canvas>();
-        // canvas.enabled = !canvas.enabled;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Vector3 panelPos = Camera.main.WorldToScreenPoint(this.transform.position);
-        // panelPos.y = panelPos.y + 150;
-        // panel.transform.position = panelPos;
+        
     }
 
     void FixedUpdate() {
@@ -48,8 +45,6 @@ public class CubeController : MonoBehaviour
     void OnVrExit() {
         Debug.Log("Exited");
     }
-
-
 
     public void scaleCube() {
         float sliderScale = slider.value*10;

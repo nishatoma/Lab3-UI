@@ -20,6 +20,12 @@ public class BallController : MonoBehaviour
     void Update()
     {
         sliderGravity = -((slider.value*100.0 + 9.81f) > 0.3 ? (slider.value*100 + 9.81f) : 9.81f);
+
+        if (OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) > 0.5f) {
+            toggleGravityAndKinematics(rb, true, false);
+        } else {
+            toggleGravityAndKinematics(rb, false, true);
+        }
     }
 
     public void toggleGravity(Toggle toggle) {
@@ -39,5 +45,10 @@ public class BallController : MonoBehaviour
 
     public void updateGravityText(Text text) {
         text.text = "Gravity: " + Physics.gravity.y;
+    }
+
+    void toggleGravityAndKinematics(Rigidbody rb,bool gravity, bool kine) {
+        rb.useGravity = gravity;
+        rb.isKinematic = kine;
     }
 }
